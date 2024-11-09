@@ -12,11 +12,11 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 
-public class URLJsonExchangeRateDeserializer implements ExchangeRateDeserializer{
+public class URLJSONObjectExchangeRateDeserializer implements ExchangeRateDeserializer{
     private final MapCurrencyLookup currencyLookup;
     private final URLConnection urlConnection;
 
-    public URLJsonExchangeRateDeserializer(CurrencyLookup currencyLookup, URLConnection urlConnection) {
+    public URLJSONObjectExchangeRateDeserializer(CurrencyLookup currencyLookup, URLConnection urlConnection) {
         this.currencyLookup = (MapCurrencyLookup) currencyLookup;
         this.urlConnection = urlConnection;
     }

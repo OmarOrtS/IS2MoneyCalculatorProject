@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ba44ff4-2f42-4246-98fc-048453f9adcd" name="Changes" comment="Change project to maven">
-      <change afterPath="$PROJECT_DIR$/currencies.tsv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/EraioURLConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/EraioURLConnectionReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/URLConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/URLConnectionReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/deserializer/URLJsonExchangeRateDeserializer.java" afterDir="false" />
+    <list default="true" id="5ba44ff4-2f42-4246-98fc-048453f9adcd" name="Changes" comment="Added lookup currencies.tsv&#10;Created URLJsonExchangeRateDeserializer and load method for EraioExchangeRateLoader">
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/CurrencyDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/MainFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/MoneyDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/SwingCurrencyDialog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/SwingMoneyDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/deserializer/ExchangeRateDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/deserializer/ExchangeRateDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/deserializer/JsonExchangeRateDeserializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/loaders/EraioExchangeRateLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/loaders/EraioExchangeRateLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/loaders/ExchangeRateLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/loaders/ExchangeRateLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/model/ExchangeRate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/model/ExchangeRate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/deserializer/URLJsonExchangeRateDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/deserializer/URLJSONObjectExchangeRateDeserializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +46,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "E:/Is2/IS2MoneyCalculatorProject"
+    "last_opened_file_path": "E:/Is2/money calculatorv2"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="software.ulpgc.moneycalculator" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Is2\IS2MoneyCalculatorProject" />
       <recent name="E:\Is2\IS2MoneyCalculatorProject\src\main\java\software\ulpgc\moneycalculator\model" />
@@ -83,11 +82,20 @@
       <option name="project" value="LOCAL" />
       <updated>1730854901694</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added lookup currencies.tsv&#10;Created URLJsonExchangeRateDeserializer and load method for EraioExchangeRateLoader">
+      <option name="closed" value="true" />
+      <created>1730948850622</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730948850622</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Change project to maven" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change project to maven" />
+    <MESSAGE value="Added lookup currencies.tsv&#10;Created URLJsonExchangeRateDeserializer and load method for EraioExchangeRateLoader" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added lookup currencies.tsv&#10;Created URLJsonExchangeRateDeserializer and load method for EraioExchangeRateLoader" />
   </component>
 </project>
