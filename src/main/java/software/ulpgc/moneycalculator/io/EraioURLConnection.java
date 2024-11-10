@@ -17,12 +17,8 @@ public class EraioURLConnection implements URLConnection{
 
     @Override
     public URLConnection openConnection() {
-        return (URLConnection) connection;
-    }
-
-    @Override
-    public void closeConnection() {
-        this.connection.disconnect();
+        try{ return (URLConnection) connection; }
+        finally { connection.disconnect(); }
     }
 
     @Override

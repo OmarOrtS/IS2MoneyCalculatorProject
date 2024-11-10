@@ -1,6 +1,7 @@
-package software.ulpgc.moneycalculator;
+package software.ulpgc.moneycalculator.Swing;
 
 import software.ulpgc.moneycalculator.model.Money;
+import software.ulpgc.moneycalculator.view.MoneyDialog;
 
 import javax.swing.*;
 import java.awt.*;

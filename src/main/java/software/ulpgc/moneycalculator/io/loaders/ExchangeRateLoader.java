@@ -7,6 +7,5 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 public interface ExchangeRateLoader {
-    ExchangeRate load(Currency from, Currency to) throws IOException;
-    ExchangeRate load(Currency from, Currency to, LocalDate date);
+    ExchangeRate load(Currency from, Currency to);
 }

@@ -1,5 +1,6 @@
-package software.ulpgc.moneycalculator;
+package software.ulpgc.moneycalculator.Swing;
 
+import software.ulpgc.moneycalculator.control.Command;
 import software.ulpgc.moneycalculator.model.Currency;
 
 import javax.swing.*;
@@ -19,7 +20,7 @@ public class MainFrame extends JFrame {
         this.commands = new HashMap<>();
         this.setTitle("MoneyCalculator");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+        this.setSize(1080,720);
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
         this.add(toolbar(), BorderLayout.SOUTH);

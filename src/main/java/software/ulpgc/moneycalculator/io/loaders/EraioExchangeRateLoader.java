@@ -13,10 +13,9 @@ public class EraioExchangeRateLoader implements ExchangeRateLoader {
     public EraioExchangeRateLoader(ExchangeRateDeserializer deserializer) {this.deserializer = deserializer;}
 
     @Override
-    public ExchangeRate load(Currency from, Currency to) throws IOException { return deserializer.deserialize(from,to); }
-
-    @Override
-    public ExchangeRate load(Currency from, Currency to, LocalDate date) {
-        return null;
+    public ExchangeRate load(Currency from, Currency to) {
+        try { return deserializer.deserialize(from,to);
+        } catch (IOException e) { throw new RuntimeException(e);}
     }
+
 }

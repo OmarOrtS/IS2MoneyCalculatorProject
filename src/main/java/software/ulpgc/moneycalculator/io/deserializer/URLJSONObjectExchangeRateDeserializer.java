@@ -15,15 +15,17 @@ import java.time.LocalDate;
 public class URLJSONObjectExchangeRateDeserializer implements ExchangeRateDeserializer{
     private final MapCurrencyLookup currencyLookup;
     private final URLConnection urlConnection;
+    private final JSONObject jsonObject;
 
-    public URLJSONObjectExchangeRateDeserializer(CurrencyLookup currencyLookup, URLConnection urlConnection) {
+    public URLJSONObjectExchangeRateDeserializer(CurrencyLookup currencyLookup, URLConnection urlConnection) throws IOException {
         this.currencyLookup = (MapCurrencyLookup) currencyLookup;
         this.urlConnection = urlConnection;
+        urlConnection.setRequestMethod("GET");
+        this.jsonObject = getJSONObjectFromURL(urlConnection);
     }
 
     @Override
     public ExchangeRate deserialize(Currency from, Currency to) throws IOException {
-        JSONObject jsonObject = getJSONObjectFromURL(urlConnection);
         return new ExchangeRate(LocalDate.now(),
                 getExchangeRates(from, to, jsonObject),
                 new Currency(from.getCode(), from.getName(), from.getSymbol()),
@@ -32,9 +34,13 @@ public class URLJSONObjectExchangeRateDeserializer implements ExchangeRateDeseri
     }
 
     private static double getExchangeRates(Currency from, Currency to, JSONObject jsonObject) {
-        if (EurIsEqualsTo(from) && EurIsEqualsTo(to)) return getIndirectRates(from, to, jsonObject);
-        if (EurIsEqualsTo(from)) return jsonObject.getJSONObject("rates").getDouble(from.getCode());
+        if (!EurIsEqualsTo(from) && !EurIsEqualsTo(to)) return getIndirectRates(from, to, jsonObject);
+        if (!EurIsEqualsTo(from)) return getInverseRates(from, jsonObject);
         return jsonObject.getJSONObject("rates").getDouble(to.getCode());
+    }
+
+    private static double getInverseRates(Currency from, JSONObject jsonObject) {
+        return 1/jsonObject.getJSONObject("rates").getDouble(from.getCode());
     }
 
     private static boolean EurIsEqualsTo(Currency currency) {
@@ -42,12 +48,11 @@ public class URLJSONObjectExchangeRateDeserializer implements ExchangeRateDeseri
     }
 
     private static double getIndirectRates(Currency from, Currency to, JSONObject jsonObject) {
-        return jsonObject.getJSONObject("rates").getDouble(from.getCode()) /
-                jsonObject.getJSONObject("rates").getDouble(to.getCode());
+        return jsonObject.getJSONObject("rates").getDouble(to.getCode()) /
+                jsonObject.getJSONObject("rates").getDouble(from.getCode());
     }
 
-    public JSONObject getJSONObjectFromURL(URLConnection urlConnection) throws IOException {
-        urlConnection.setRequestMethod("GET");
+    private JSONObject getJSONObjectFromURL(URLConnection urlConnection) throws IOException {
         EraioURLConnectionReader eraioURLConnectionReader = new EraioURLConnectionReader(urlConnection);
         StringBuilder response = eraioURLConnectionReader.readConnection();
 
