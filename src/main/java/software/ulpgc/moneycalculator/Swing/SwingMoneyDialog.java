@@ -13,6 +13,7 @@ public class SwingMoneyDialog extends JPanel implements MoneyDialog {
 
     public SwingMoneyDialog(SwingCurrencyDialog currencyDialog) {
         setLayout(new FlowLayout(FlowLayout.LEFT));
+        this.add(new JLabel("Amount: "));
         this.add(this.amountField = amountField());
         this.add(this.currencyDialog = currencyDialog);
     }

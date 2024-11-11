@@ -13,15 +13,15 @@ public class Currency {
         this.symbol = symbol;
     }
 
-    public String getCode() {
+    public String Code() {
         return code;
     }
 
-    public String getName() {
+    public String Name() {
         return name;
     }
 
-    public String getSymbol() {
+    public String Symbol() {
         return symbol;
     }
 
@@ -30,7 +30,9 @@ public class Currency {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Currency currency = (Currency) o;
-        return Objects.equals(code, currency.code) && Objects.equals(name, currency.name) && Objects.equals(symbol, currency.symbol);
+        return Objects.equals(code, currency.code) &&
+                Objects.equals(name, currency.name) &&
+                Objects.equals(symbol, currency.symbol);
     }
 
     @Override

@@ -6,8 +6,8 @@ import software.ulpgc.moneycalculator.io.deserializer.CurrencyDeserializer;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.ArrayList;
 import java.util.List;
+import static java.util.stream.Collectors.*;
 
 public class FileCurrencyLoader implements CurrencyLoader {
     private final File file;
@@ -21,11 +21,7 @@ public class FileCurrencyLoader implements CurrencyLoader {
 
     @Override
     public List<Currency> load() throws IOException {
-        List<Currency> currencies = new ArrayList<>();
         List<String> lines = Files.readAllLines(file.toPath());
-        for (String line : lines) {
-            currencies.add(deserializer.deserialize(line));
-        }
-        return currencies;
+        return lines.stream().map(deserializer::deserialize).collect(toList());
     }
 }

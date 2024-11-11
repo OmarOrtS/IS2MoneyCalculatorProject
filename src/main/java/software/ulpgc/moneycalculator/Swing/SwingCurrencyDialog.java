@@ -12,12 +12,13 @@ public class SwingCurrencyDialog extends JPanel implements CurrencyDialog {
 
     public SwingCurrencyDialog(List<Currency> currencies) {
         this.currencies = currencies;
+        this.add(new JLabel("Currency: "));
         this.add(this.selector = selector());
     }
 
     private JComboBox<String> selector() {
         JComboBox<String> comboBox = new JComboBox<>();
-        currencies.stream().map(Currency::getCode).forEach(comboBox::addItem);
+        currencies.stream().map(Currency::Code).forEach(comboBox::addItem);
         return comboBox;
     }
 

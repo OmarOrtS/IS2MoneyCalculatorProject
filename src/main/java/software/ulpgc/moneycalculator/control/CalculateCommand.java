@@ -8,8 +8,6 @@ import software.ulpgc.moneycalculator.view.CurrencyDialog;
 import software.ulpgc.moneycalculator.view.MoneyDialog;
 import software.ulpgc.moneycalculator.view.MoneyDisplay;
 
-import java.io.IOException;
-
 public class CalculateCommand implements Command {
     private final MoneyDialog moneyDialog;
     private final CurrencyDialog currencyDialog;
@@ -27,8 +25,8 @@ public class CalculateCommand implements Command {
     public void execute() {
         Money money = moneyDialog.get();
         Currency currency = currencyDialog.get();
-        ExchangeRate exchangeRate = exchangeRateLoader.load(money.getCurrency(), currency);
-        Money result = new Money(money.getAmount() * exchangeRate.rate(), currency);
+        ExchangeRate exchangeRate = exchangeRateLoader.load(money.Currency(), currency);
+        Money result = new Money(money.Amount() * exchangeRate.rate(), currency);
         moneyDisplay.display(result);
     }
 }

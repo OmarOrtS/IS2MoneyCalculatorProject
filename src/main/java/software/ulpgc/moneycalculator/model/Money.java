@@ -1,5 +1,7 @@
 package software.ulpgc.moneycalculator.model;
 
+import java.text.DecimalFormat;
+
 public class Money {
     private final double amount;
     private final Currency currency;
@@ -9,19 +11,17 @@ public class Money {
         this.currency = currency;
     }
 
-    public double getAmount() {
+    public double Amount() {
         return amount;
     }
 
-    public Currency getCurrency() {
+    public Currency Currency() {
         return currency;
     }
 
     @Override
     public String toString() {
-        return "Money{" +
-                "amount=" + amount +
-                ", currency=" + currency +
-                '}';
+        DecimalFormat decimalFormat = new DecimalFormat("#.00");
+        return decimalFormat.format(amount) + currency.Symbol();
     }
 }

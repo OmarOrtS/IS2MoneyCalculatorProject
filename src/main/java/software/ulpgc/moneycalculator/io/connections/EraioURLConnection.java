@@ -1,4 +1,4 @@
-package software.ulpgc.moneycalculator.io;
+package software.ulpgc.moneycalculator.io.connections;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,18 +7,10 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 public class EraioURLConnection implements URLConnection{
-    private final URL url;
     private final HttpURLConnection connection;
 
     public EraioURLConnection(URL url) throws IOException {
-        this.url = url;
         this.connection = (HttpURLConnection) url.openConnection();
-    }
-
-    @Override
-    public URLConnection openConnection() {
-        try{ return (URLConnection) connection; }
-        finally { connection.disconnect(); }
     }
 
     @Override
