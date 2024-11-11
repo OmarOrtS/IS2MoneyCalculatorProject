@@ -5,22 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ba44ff4-2f42-4246-98fc-048453f9adcd" name="Changes" comment="Changed UI visualization&#10;Refactored Code to facilitate reading">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/Swing/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/Swing/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/Swing/SwingCurrencyDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/Swing/SwingCurrencyDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/Swing/SwingMoneyDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/Swing/SwingMoneyDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/Swing/SwingMoneyDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/Swing/SwingMoneyDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/apps/windows/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/apps/windows/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/control/CalculateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/control/CalculateCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/CurrencyLookup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/EraioURLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/connections/EraioURLConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/EraioURLConnectionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/connections/EraioURLConnectionReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/MapCurrencyLookup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/URLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/connections/URLConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/URLConnectionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/connections/URLConnectionReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/deserializer/URLJSONObjectExchangeRateDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/deserializer/URLJSONObjectExchangeRateDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/loaders/FileCurrencyLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/io/loaders/FileCurrencyLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/model/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/model/Currency.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/model/Money.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/software/ulpgc/moneycalculator/model/Money.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731200965298</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Changed UI visualization&#10;Refactored Code to facilitate reading">
+      <option name="closed" value="true" />
+      <created>1731368389966</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731368389966</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

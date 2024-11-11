@@ -21,7 +21,7 @@ public class Money {
 
     @Override
     public String toString() {
-        DecimalFormat decimalFormat = new DecimalFormat("#.00");
+        DecimalFormat decimalFormat = new DecimalFormat("#0.00");
         return decimalFormat.format(amount) + currency.Symbol();
     }
 }
