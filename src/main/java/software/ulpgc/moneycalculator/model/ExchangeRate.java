@@ -1,13 +1,11 @@
 package software.ulpgc.moneycalculator.model;
 
-import java.time.LocalDate;
-
-public record ExchangeRate(LocalDate date, double rate, Currency from, Currency to) {
+public record ExchangeRate(long timestamp, double rate, Currency from, Currency to) {
 
     @Override
     public String toString() {
         return "ExchangeRate{" +
-                "date=" + date +
+                "timestamp=" + timestamp +
                 ", rate=" + rate +
                 ", from=" + from +
                 ", to=" + to +

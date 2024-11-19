@@ -2,25 +2,23 @@ package software.ulpgc.moneycalculator.io.deserializer;
 
 import org.json.JSONObject;
 import software.ulpgc.moneycalculator.io.connections.EraioURLConnectionReader;
-import software.ulpgc.moneycalculator.io.connections.URLConnection;
 import software.ulpgc.moneycalculator.model.Currency;
 import software.ulpgc.moneycalculator.model.ExchangeRate;
 
 import java.io.IOException;
-import java.time.LocalDate;
+import java.net.URL;
 
 
 public class URLJSONObjectExchangeRateDeserializer implements ExchangeRateDeserializer{
     private final JSONObject jsonObject;
 
-    public URLJSONObjectExchangeRateDeserializer(URLConnection urlConnection) throws IOException {
-        urlConnection.setRequestMethod("GET");
+    public URLJSONObjectExchangeRateDeserializer(URL urlConnection) throws IOException {
         this.jsonObject = getJSONObjectFromURL(urlConnection);
     }
 
     @Override
     public ExchangeRate deserialize(Currency from, Currency to) {
-        return new ExchangeRate(LocalDate.now(),
+        return new ExchangeRate(jsonObject.getLong("timestamp"),
                 getExchangeRates(from, to, jsonObject),
                 new Currency(from.Code(), from.Name(), from.Symbol()),
                 new Currency(to.Code(), to.Name(), to.Symbol())
@@ -47,7 +45,7 @@ public class URLJSONObjectExchangeRateDeserializer implements ExchangeRateDeseri
                 jsonObject.getJSONObject("rates").getDouble(from.Code());
     }
 
-    private JSONObject getJSONObjectFromURL(URLConnection urlConnection) throws IOException {
+    private JSONObject getJSONObjectFromURL(URL urlConnection) throws IOException {
         EraioURLConnectionReader eraioURLConnectionReader = new EraioURLConnectionReader(urlConnection);
         StringBuilder response = eraioURLConnectionReader.readConnection();
 
